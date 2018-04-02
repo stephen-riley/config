@@ -11,6 +11,9 @@ export ZSH=/Users/sriley/.oh-my-zsh
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+# NOTE: you'll need a compatible font.  See https://github.com/ryanoasis/nerd-fonts for a list of them.
+#       (use Hack/Knack if in doubt)
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
