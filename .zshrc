@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/sriley/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -10,9 +10,6 @@ export ZSH=/Users/sriley/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# NOTE: you'll need a compatible font.  See https://github.com/ryanoasis/nerd-fonts for a list of them.
-#       (use Hack/Knack if in doubt)
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -129,14 +126,19 @@ zsh_wifi_signal(){
         fi
 }
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir_writable dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery custom_wifi_signal background_jobs command_execution_time time)
 
-DEFAULT_USER=sriley
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="yellow"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+
+
+DEFAULT_USER=$USER
 POWERLEVEL9K_ALWAYS_SHOW_USER=true
 
 ZLE_RPROMPT_INDENT=0
 
 alias sqlserver="docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>' -p 1433:1433 --name sql1 -d microsoft/mssql-server-linux:2017-latest"
 alias sqlcli="mssql-cli -S localhost -U sa"
-
